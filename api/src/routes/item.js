@@ -3,7 +3,7 @@ const {Item} = require("../db");
 const router = Router();
 
 // Get All Items (development purposes)
-router.get('/',async(req,res)=>{
+router.get('/getall',async(req,res)=>{
     try{
         const items = await Item.findAll();
         res.status(200).send(items);
@@ -17,7 +17,7 @@ router.get('/',async(req,res)=>{
 router.get('/:id',async(req,res)=>{
     try{
         const items = await Item.findAll({
-            where:{id:req.params.id}
+            where:{userId:req.params.id}
         });
         res.status(200).send(items);
     }
@@ -26,12 +26,27 @@ router.get('/:id',async(req,res)=>{
     }
 })
 
+//Get items of a folder
+router.get('/folder/:id',async(req,res)=>{
+    try{
+        const {userId} = req.body;
+        const items = await Item.findAll({
+            where: {userId: userId, folderId: req.params.id}
+        });
+        res.status(200).send(items);
+    }
+    catch(e){
+        res.status(500).send(e);
+    }
+})
+
+
 // Create items
 router.post('/',async(req,res)=>{
     try{
-        const {name} = req.body;
+        const {userId,folderId,name} = req.body;
         let item = await Item.create({
-            name
+            name,userId,folderId
         })
         item
             ? res.status(200).send({success:'Item created'})
