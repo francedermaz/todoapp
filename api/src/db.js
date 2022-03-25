@@ -29,10 +29,13 @@ sequelize.models = Object.fromEntries(capsEntries);
 const { User, Item, Folder } = sequelize.models;
 
 // Aca vendrian las relaciones
-Item.belongsTo(Folder, { through: 'item_fold' });
-Folder.belongsToMany(Item, { through: 'item_fold' });
+// Item.belongsTo(Folder, { through: 'item_fold' });
+// Folder.belongsToMany(Item, { through: 'item_fold' });
 User.hasMany(Folder);
 User.hasMany(Item);
+Folder.belongsTo(User);
+Item.belongsTo(Folder);
+Item.belongsTo(User);
 //
 
 module.exports = {
