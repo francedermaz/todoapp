@@ -1,0 +1,73 @@
+.navbar{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 6em;
+    background-color: transparent;
+}
+
+.title,.titleglow{
+    font-family:calibri;
+    font-size: 1.25em;
+    -webkit-text-stroke: 0.5px black;
+}
+
+.title{
+    color:white;
+}
+
+.titleglow{
+    color:#F65151;
+}
+
+.title:hover{
+    color:#F65151;
+    transform: scale(1.05);
+}
+
+.user{
+    color: #f4523b;
+    margin-top: 1px;
+    height: 18px;
+    margin-left: 4vh;
+    cursor: pointer;
+}
+
+.user:hover{
+    transform: scale(1.25);
+    color: whitesmoke;
+}
+
+.menu{
+    display:grid;
+    grid-template-columns: 150px 150px 150px;
+    margin-right: 2.5em;
+    align-items: center;
+}
+
+a:link, a:visited, a:active {
+    text-decoration:none;
+}
+
+.divlogin{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.logo{
+    font-family: calibri;
+    color:#fa584c;
+    font-size: 2.25em;
+    font-weight: 18em;
+    -webkit-text-stroke: 2px black;
+    margin-left: 1.85em;
+    user-select: none; 
+    font-style: italic;
+}
+
+.logo:hover{
+    cursor: pointer;
+    transform: scale(1.05);
+    color:#ff7e7e
+}
