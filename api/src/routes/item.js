@@ -29,4 +29,22 @@ router.post('/',async(req,res)=>{
     }
 })
 
+// Update Item
+router.put('/:id',async(req,res)=>{
+    try{
+        Item.findByPk(req.params.id)
+        .then(data=>{
+            data.update({
+                name: req.body.name,
+            })
+            .then(response=>{res.status(200).json(response)})
+            .catch(e=>{res.status(500).json({e})});
+        })
+        .catch(e=>res.status(500).json({e}))
+    }
+    catch(e){
+        res.status(500).send({error:'Error'})
+    }
+})
+
 module.exports = router;
