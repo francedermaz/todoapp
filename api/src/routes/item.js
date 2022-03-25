@@ -13,6 +13,19 @@ router.get('/',async(req,res)=>{
     }
 })
 
+// Get All Items of a User
+router.get('/:id',async(req,res)=>{
+    try{
+        const items = await Item.findAll({
+            where:{id:req.params.id}
+        });
+        res.status(200).send(items);
+    }
+    catch(e){
+        res.status(500).send(e);
+    }
+})
+
 // Create items
 router.post('/',async(req,res)=>{
     try{
@@ -47,6 +60,7 @@ router.put('/:id',async(req,res)=>{
     }
 })
 
+// Delete Item
 router.delete('/:id',async(req,res)=>{
     try{
         Item.destroy({
