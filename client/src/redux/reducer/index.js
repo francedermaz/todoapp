@@ -3,14 +3,16 @@ import jwt from "jsonwebtoken";
 const initialState = {
     user:{},
     loggedIn:false,
+    items:[],
+    folders:[],
 }
 
 const rootReducer = (state=initialState,action)=>{
     switch(action.type){
         case "GET_ITEMS":
-            return{...state}
+            return{...state,items:action.payload}
         case "GET_FOLDERS":
-            return {...state}
+            return {...state,folders:action.payload}
         case "LOGIN_USER":
             if (action.payload.token) {
                 const token = action.payload.token;

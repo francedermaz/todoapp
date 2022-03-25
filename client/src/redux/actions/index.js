@@ -1,7 +1,6 @@
 import axios from 'axios';
 
 export function getItems(payload) {
-    console.log(payload);
     return async function (dispatch) {
         let req = await axios.get("http://localhost:3001/item/"+payload);
         return dispatch({
