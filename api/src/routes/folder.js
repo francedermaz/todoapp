@@ -1,5 +1,5 @@
 const { Router } = require('express');
-const Folder = require("../db");
+const {Folder} = require("../db");
 const router = Router();
 
 // Get All Folders (development purposes)

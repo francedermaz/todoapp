@@ -1,5 +1,5 @@
 const { Router } = require('express');
-const Item = require("../db");
+const {Item} = require("../db");
 const router = Router();
 
 // Get All Items (development purposes)
