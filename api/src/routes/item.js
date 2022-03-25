@@ -2,7 +2,7 @@ const { Router } = require('express');
 const Item = require("../db");
 const router = Router();
 
-// Get All Items
+// Get All Items (development purposes)
 router.get('/',async(req,res)=>{
     try{
         const items = await Item.findAll();

@@ -30,11 +30,11 @@ router.get('/:id',async(req,res)=>{
 router.post('/',async(req,res)=>{
     try{
         const {name} = req.body;
-        let item = await Folder.create({
+        let folder = await Folder.create({
             name
         })
-        item
-            ? res.status(200).send({success:'Item created'})
+        folder
+            ? res.status(200).send({success:'Folder created'})
             : res.status(400).send({error:'Error'})
     }
     catch(e){
