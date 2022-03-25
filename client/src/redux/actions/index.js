@@ -1,8 +1,9 @@
 import axios from 'axios';
 
 export function getItems(payload) {
+    console.log(payload);
     return async function (dispatch) {
-        let req = await axios.post("http://localhost:3001/item/"+payload);
+        let req = await axios.get("http://localhost:3001/item/"+payload);
         return dispatch({
             type: "GET_ITEMS",
             payload: req.data,
@@ -12,7 +13,7 @@ export function getItems(payload) {
 
 export function getFolders(payload) {
     return async function (dispatch) {
-        let req = await axios.post("http://localhost:3001/folder/"+payload);
+        let req = await axios.get("http://localhost:3001/folder/"+payload);
         return dispatch({
             type: "GET_FOLDERS",
             payload: req.data,
