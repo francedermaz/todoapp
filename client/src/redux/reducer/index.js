@@ -7,6 +7,10 @@ const initialState = {
 
 const rootReducer = (state=initialState,action)=>{
     switch(action.type){
+        case "GET_ITEMS":
+            return{...state}
+        case "GET_FOLDERS":
+            return {...state}
         case "LOGIN_USER":
             if (action.payload.token) {
                 const token = action.payload.token;
@@ -29,7 +33,7 @@ const rootReducer = (state=initialState,action)=>{
             localStorage.removeItem("token");
             localStorage.removeItem("user");
             return { ...state, user: {}, loggedIn: false };
-          case "CREATE_USER":
+        case "CREATE_USER":
             return { ...state };
         default: return state;
     }
