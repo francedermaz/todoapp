@@ -47,4 +47,25 @@ router.put('/:id',async(req,res)=>{
     }
 })
 
+router.delete('/:id',async(req,res)=>{
+    try{
+        Item.destroy({
+            where: {
+                id:parseInt(req.params.id),
+            }
+        })
+        .then(function(deletedRecord) {
+            deletedRecord===1
+                ? res.status(200).json({message:"Deleted successfully"})
+                : res.status(404).json({message:"Not found"})
+        })
+        .catch(function(error){
+            res.status(500).json(error);
+        });
+    }
+    catch(e){
+        res.status(500).send({error: "Error"})
+    }
+})
+
 module.exports = router;
