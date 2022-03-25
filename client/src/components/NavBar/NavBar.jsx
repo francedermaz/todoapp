@@ -29,11 +29,6 @@ const NavBar = ({is}) => {
                         }
                     </Link>
                     }
-                    <Link to={'/about'}>
-                        {
-                            is==='about'?<h1 className={styles.titleglow}>About</h1>:<h1 className={styles.title}>About</h1>
-                        }
-                    </Link>
                     <Link to={'/contact'}>
                         {
                             is==='contact'?<h1 className={styles.titleglow}>Contact</h1>:<h1 className={styles.title}>Contact</h1>

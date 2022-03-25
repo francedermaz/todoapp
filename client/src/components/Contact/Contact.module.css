@@ -1,0 +1,19 @@
+.title{
+    padding-top: 40px;
+    font-weight: 0.5em;
+    color:rgb(22, 21, 21);
+
+}
+
+.content{
+    display: flex;
+    flex-direction: column;
+    background-color: #ffffff;
+    height: 76vh;
+    align-items: center;
+    justify-content: center;
+}
+
+.subtitle{
+    margin-bottom: 2px;
+}
