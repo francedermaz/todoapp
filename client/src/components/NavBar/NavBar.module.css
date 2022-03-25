@@ -40,7 +40,7 @@
 
 .menu{
     display:grid;
-    grid-template-columns: 150px 150px 150px;
+    grid-template-columns: 150px 150px 150px 150px;
     margin-right: 2.5em;
     align-items: center;
 }

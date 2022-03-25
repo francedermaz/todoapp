@@ -4,6 +4,11 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faUser } from "@fortawesome/free-solid-svg-icons";
 
 const NavBar = ({is}) => {
+    let aux = { name: "" };
+    if (localStorage.getItem("user")) {
+      aux = localStorage.getItem("user");
+      aux = JSON.parse(aux);
+    }
     return(
         <div>
             <section className={styles.navbar}>
@@ -13,6 +18,17 @@ const NavBar = ({is}) => {
                     }
                 </Link>
                 <div className={styles.menu}>
+                    {
+                        aux.id?<Link to={'/home'}>
+                        {
+                            is==='home'?<h1 className={styles.titleglow}>Home</h1>:<h1 className={styles.title}>Home</h1>
+                        }
+                    </Link>:<Link to={'/login'}>
+                        {
+                            is==='home'?<h1 className={styles.titleglow}>Home</h1>:<h1 className={styles.title}>Home</h1>
+                        }
+                    </Link>
+                    }
                     <Link to={'/about'}>
                         {
                             is==='about'?<h1 className={styles.titleglow}>About</h1>:<h1 className={styles.title}>About</h1>
