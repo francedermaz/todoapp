@@ -17,7 +17,7 @@ router.get('/',async(req,res)=>{
 router.get('/:id',async(req,res)=>{
     try{
         const folder = await Folder.findAll({
-            where:{id:req.params.id}
+            where:{userId:req.params.id}
         });
         res.status(200).send(folder);
     }
@@ -29,9 +29,10 @@ router.get('/:id',async(req,res)=>{
 // Create folder
 router.post('/',async(req,res)=>{
     try{
-        const {name} = req.body;
+        const {userId,name} = req.body;
         let folder = await Folder.create({
-            name
+            name,
+            userId
         })
         folder
             ? res.status(200).send({success:'Folder created'})
