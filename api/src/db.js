@@ -26,10 +26,13 @@ let entries = Object.entries(sequelize.models);
 let capsEntries = entries.map((entry) => [entry[0][0].toUpperCase() + entry[0].slice(1), entry[1]]);
 sequelize.models = Object.fromEntries(capsEntries);
 
-const { User } = sequelize.models;
+const { User, Item, Folder } = sequelize.models;
 
 // Aca vendrian las relaciones
-// Product.hasMany(Reviews);
+Folder.hasMany(Item)
+User.hasMany(Item)
+User.hasMany(Folder)
+//
 
 module.exports = {
   ...sequelize.models,
