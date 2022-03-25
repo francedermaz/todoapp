@@ -39,12 +39,12 @@
     border-radius: 30px 30px 30px 30px;
     color:white;
     font-family: calibri;
-    background-color: #b241fd;
+    background-color: #f4523b;
 }
 
 .button:hover{
     cursor: pointer;
-    background-color: rgb(218, 32, 218)
+    background-color: rgb(255, 149, 145)
 }
 
 .buttondis{
@@ -53,7 +53,8 @@
     border-color: transparent;
     border-radius: 30px 30px 30px 30px;
     color:white;
-    background-color: rgba(98, 0, 255, 0.171);
+    font-size: 0.78em;
+    background-color: #f4513b59
 }
 
 .others{
@@ -70,28 +71,4 @@
 .success{
     color:green;
     font-size: 0.85em;
-}
-
-
-.btnBack {
-    margin-left: 4vh;
-    margin-top: 18px;
-    padding: 8px 12px;
-    font-family: 'Shippori Antique B1', sans-serif;
-    border-radius: 3px;
-    font-size: 20px;
-    color: whitesmoke;
-    text-decoration: none;
-    background-color: #b983ff;
-    border: none;
-    border-bottom: 5px solid #230602;
-    text-shadow: 0px -2px #230602;
-    -webkit-transition: all 0.1s;
-    transition: all 0.1s;
-    cursor: pointer;
-}
-
-.btnBack:hover {
-    color: #b983ff;
-    background-color: whitesmoke;
 }

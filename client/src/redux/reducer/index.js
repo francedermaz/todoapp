@@ -1,4 +1,4 @@
-import * as actions from '../actions/index';
+import jwt from "jsonwebtoken";
 
 const initialState = {
     user:{},

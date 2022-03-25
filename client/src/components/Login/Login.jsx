@@ -3,9 +3,8 @@ import { useDispatch } from "react-redux";
 import { Link, useNavigate } from "react-router-dom";
 import { loginUser,createUser } from "../../redux/actions/index";
 import Loader from "../Loader/Loader";
-import styles from "./Login.module.scss";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faArrowLeft } from "@fortawesome/free-solid-svg-icons";
+import styles from "./Login.module.css";
+import NavBar from "../NavBar/NavBar";
 
 const Login = () => {
   const [input, setInput] = useState({
@@ -21,31 +20,19 @@ const Login = () => {
     email: false,
   });
   const [success, setSuccess] = useState(false);
-  const [revoke, setRevoke] = useState(false);
-  const { loginWithGoogle, loginWithGithub } = useAuth();
-
   const dispatch = useDispatch();
-  const history = useNavigate();
 
   const makedispatch = (e) => {
     e.preventDefault();
     dispatch(loginUser(input)).then((res) => {
-      if (res.payload.msg === "Incorrect password :(") {
+      if (res.payload.msg === "Incorrect password") {
         setErrorIncorrect({
           password: true,
         });
-      } else if (res.payload.msg === "Email not found :(") {
+      } else if (res.payload.msg === "Email not found") {
         setErrorIncorrect({
           email: true,
         });
-      } else if (res.payload.msg === "Revoke") {
-        setErrorIncorrect({
-          password: false,
-        });
-        setRevoke(true);
-        setTimeout(function () {
-          history("/resetpassword");
-        }, 1600);
       } else {
         setInput({
           email: "",
@@ -96,11 +83,7 @@ const Login = () => {
   return (
     <div>
       <div className={styles.divbtt}>
-        <Link to="/home">
-          <button className={styles.btnBack}>
-            <FontAwesomeIcon icon={faArrowLeft} />
-          </button>
-        </Link>
+          <NavBar/>
       </div>
 
       <div className={styles.page}>
@@ -152,13 +135,6 @@ const Login = () => {
           )}
           {errorIncorrect.email === true ? (
             <p className={styles.errors}>Email not registered</p>
-          ) : (
-            <></>
-          )}
-          {revoke === true ? (
-            <p className={styles.errors}>
-              Account blocked. Redirecting to reset your password
-            </p>
           ) : (
             <></>
           )}
