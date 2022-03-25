@@ -13,4 +13,20 @@ router.get('/',async(req,res)=>{
     }
 })
 
+// Create items
+router.post('/',async(req,res)=>{
+    try{
+        const {name} = req.body;
+        let item = await Item.create({
+            name
+        })
+        item
+            ? res.status(200).send({success:'Item created'})
+            : res.status(400).send({error:'Error'})
+    }
+    catch(e){
+        res.status(500).send({error:'Error'})
+    }
+})
+
 module.exports = router;
