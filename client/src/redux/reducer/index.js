@@ -28,7 +28,6 @@ const rootReducer = (state=initialState,action)=>{
         case "LOG_OUT_USER":
             localStorage.removeItem("token");
             localStorage.removeItem("user");
-            localStorage.removeItem("cartProducts");
             return { ...state, user: {}, loggedIn: false };
           case "CREATE_USER":
             return { ...state };
