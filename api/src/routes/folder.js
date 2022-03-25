@@ -1,5 +1,5 @@
 const { Router } = require('express');
-const {Folder} = require("../db");
+const {Folder, Item} = require("../db");
 const router = Router();
 
 // Get All Folders (development purposes)
@@ -46,6 +46,11 @@ router.post('/',async(req,res)=>{
 // Delete Folder
 router.delete('/:id',async(req,res)=>{
     try{
+        Item.destroy({
+            where: {
+                folderId:req.params.id,
+            }
+        })
         Folder.destroy({
             where: {
                 id:parseInt(req.params.id),
