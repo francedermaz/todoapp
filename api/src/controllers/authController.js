@@ -1,12 +1,12 @@
 require("dotenv").config();
-const { User } = require('../../db.js');
+const { User } = require('../db');
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
 const {
     AUTH_ROUNDS, AUTH_SECRET, AUTH_EXPIRES
   } = process.env;
 
-// Sign Up
+// Sign Ups
 const signUp = async (req, res) => {
     try {
         const user = await User.findOne({
