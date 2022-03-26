@@ -41,6 +41,26 @@ export function deleteItem(payload) {
     };
 }
 
+export function createFolder(payload) {
+    return async function (dispatch) {
+        let req = await axios.post("http://localhost:3001/folder/"+payload);
+        return dispatch({
+            type: "CREATE_FOLDER",
+            payload: req.data,
+        });
+    };
+}
+
+export function deleteFolder(payload) {
+    return async function (dispatch) {
+        let req = await axios.delete("http://localhost:3001/folder/"+payload);
+        return dispatch({
+            type: "DELETE_FOLDER",
+            payload: req.data,
+        });
+    };
+}
+
 export function loginUser(payload) {
     return async function (dispatch) {
         let req = await axios.post("http://localhost:3001/auth/signIn/",payload);
