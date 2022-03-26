@@ -2,6 +2,7 @@ import { useDispatch } from 'react-redux';
 import { logoutUser } from '../../redux/actions';
 import NavBar from '../NavBar/NavBar';
 import styles from './Account.module.css';
+import person from './assets/person.png';
 
 const Account = () => {
     let aux = { name: "" };
@@ -24,6 +25,7 @@ const Account = () => {
             <NavBar/>
             <div className={styles.page}>
                 <div className={styles.account}>
+                    <img className={styles.img} src={person} alt="person"/>
                     <h2 className={styles.subtitle}>Hi {aux.name}</h2>
                     <button className={styles.button} onClick={()=>handleLogout()}>Logout</button>
                 </div>
