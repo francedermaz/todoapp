@@ -1,0 +1,8 @@
+.page{
+    display: flex;
+    flex-direction: column;
+    background-color: #ffffff;
+    height: 76vh;
+    align-items: center;
+    justify-content: center;
+}
