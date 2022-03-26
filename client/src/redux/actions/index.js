@@ -21,6 +21,26 @@ export function getFolders(payload) {
     };
 }
 
+export function postItem(payload) {
+    return async function (dispatch) {
+        let req = await axios.post("http://localhost:3001/item/",payload);
+        return dispatch({
+            type: "POST_ITEMS",
+            payload: req.data,
+        });
+    };
+}
+
+export function deleteItem(payload) {
+    return async function (dispatch) {
+        let req = await axios.delete("http://localhost:3001/item/"+payload);
+        return dispatch({
+            type: "DELETE_ITEMS",
+            payload: req.data,
+        });
+    };
+}
+
 export function loginUser(payload) {
     return async function (dispatch) {
         let req = await axios.post("http://localhost:3001/auth/signIn/",payload);
