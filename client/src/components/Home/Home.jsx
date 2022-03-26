@@ -74,12 +74,13 @@ const Home = () => {
 
     // Create folder
     function createFolder(){
-        dispatch(createFolder({name:'',userId:aux.id})) //ver
+        navigate('/folder/create')
     }
     
     // Delete folder
     function deleteFolderfunction(id){
         dispatch(deleteFolder(id));
+        window.location.replace('');
     }
 
     useEffect(()=>{

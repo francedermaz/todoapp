@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { useParams } from 'react-router-dom';
-import { getItems, postItem } from '../../redux/actions';
+import { useNavigate, useParams } from 'react-router-dom';
+import { deleteItem, getFolders, getItems, postItem } from '../../redux/actions';
 import NavBar from '../NavBar/NavBar';
 import styles from './Folder.module.css';
 
@@ -14,6 +14,8 @@ const Folder = () => {
     }
 
     const dispatch = useDispatch();
+    const navigate = useNavigate();
+
     let {id} = useParams();
 
     const items = useSelector(state => state.items);
@@ -47,14 +49,27 @@ const Folder = () => {
         window.location.replace('');
     }
 
+    // Delete item
+    function deleteItemfunction(id){
+        console.log(id)
+        dispatch(deleteItem(id))
+        window.location.replace('');
+    }
+
+    // Edit Item
+    function editItemfunction(id){
+        navigate(`/edit/item/${id}`)
+    }
+
     useEffect(() => {
         dispatch(getItems(aux.id,id));
+        dispatch(getFolders());
     }, [dispatch])
     return(
         <div>
             <NavBar/>
             <div className={styles.page}>
-                <h1 className={styles.title}>What's your plan for today?</h1>
+                <h2 className={styles.title}>Inside your folder</h2>
                 <section className={styles.top}>
                     <form onSubmit={e=>handleSubmit(e)}>
                         <input className={styles.input}
@@ -67,7 +82,11 @@ const Folder = () => {
                 </section>
                 {
                     items?.map(el=>{
-                        return <li>{el.name}</li>
+                        return <li className={styles.li}>
+                            <p className={styles.name}>{el.name}</p>
+                            <button onClick={()=>deleteItemfunction(el.id)}>x</button>
+                            <button onClick={()=>editItemfunction(el.id)}>Edit</button>
+                            </li>
                     })
                 }
             </div>

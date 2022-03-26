@@ -43,7 +43,7 @@ export function deleteItem(payload) {
 
 export function createFolder(payload) {
     return async function (dispatch) {
-        let req = await axios.post("http://localhost:3001/folder/"+payload);
+        let req = await axios.post("http://localhost:3001/folder/",payload);
         return dispatch({
             type: "CREATE_FOLDER",
             payload: req.data,
