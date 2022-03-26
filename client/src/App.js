@@ -6,6 +6,8 @@ import SignUp from './components/SignUp/SignUp';
 import Contact from './components/Contact/Contact';
 import Home from './components/Home/Home';
 import Folder from './components/Folder/Folder';
+import Edit from './components/Edit/Edit';
+import Create from './components/Create/Create';
 
 function App() {
   return (
@@ -17,8 +19,8 @@ function App() {
         <Route path='/contact' element={<Contact/>}/>
         <Route path='/home' element={<Home/>}/>
         <Route path="/folder/:id" element={<Folder/>} />
-        <Route path="/item/:id" element={<Edit/>} />
-        <Route path="/folder/:id" element={<Create/>} />
+        <Route path="/edit/item/:id" element={<Edit/>} />
+        <Route path="/folder/create/" element={<Create/>} />
       </Routes>
     </div>
   );

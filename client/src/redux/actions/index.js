@@ -61,6 +61,20 @@ export function deleteFolder(payload) {
     };
 }
 
+export function editItem(payload) {
+    console.log(typeof payload.name)
+    let obj = {name:payload.name}
+    return async function (dispatch) {
+        let req = await axios.put("http://localhost:3001/item/"+payload.id,obj);
+        return dispatch({
+            type: "EDIT_ITEM",
+            payload: req.data,
+        });
+    };
+}
+
+
+// User
 export function loginUser(payload) {
     return async function (dispatch) {
         let req = await axios.post("http://localhost:3001/auth/signIn/",payload);

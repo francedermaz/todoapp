@@ -68,8 +68,8 @@ const Home = () => {
     }
 
     // Edit Item
-    function editItemfunction(id){  //ver
-
+    function editItemfunction(id){
+        navigate(`/edit/item/${id}`)
     }
 
     // Create folder

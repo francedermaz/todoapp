@@ -21,6 +21,8 @@ const rootReducer = (state=initialState,action)=>{
             return {...state}
         case "DELETE_FOLDER":
             return {...state}
+        case "EDIT_ITEM":
+            return {...state}
         case "LOGIN_USER":
             if (action.payload.token) {
                 const token = action.payload.token;
