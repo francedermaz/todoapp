@@ -1,8 +1,9 @@
 import axios from 'axios';
 
-export function getItems(payload) {
+export function getItems(userId,folderId) {
+    let payload = {userId: userId, folderId:folderId}
     return async function (dispatch) {
-        let req = await axios.get("http://localhost:3001/item/"+payload);
+        let req = await axios.post("http://localhost:3001/item/folder/",payload);
         return dispatch({
             type: "GET_ITEMS",
             payload: req.data,

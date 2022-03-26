@@ -11,27 +11,35 @@ const Home = () => {
       aux = JSON.parse(aux);
     }
     const dispatch = useDispatch();
+    
+    let foldernum=null;
     const items = useSelector(state=>state.items);
     const folders = useSelector(state=>state.folders);
 
     useEffect(()=>{
-        dispatch(getFolders(aux.id));
-        dispatch(getItems(aux.id));
-    })
+        dispatch(getFolders(aux.id)); //Get folders
+        dispatch(getItems(aux.id,foldernum));
+    },[dispatch])
 
     return(
         <div>
             <NavBar/>
-            {
-                items?.map(el=>{
-                    return <p>{el.name}</p>
-                })
-            }
-            {
-                folders?.map(el=>{
-                    return <p>{el.name}</p>
-                })
-            }
+            <div>
+                <ul>
+                {
+                    items?.map(el=>{
+                        return <li>{el.name}</li>
+                    })
+                }
+                </ul>
+                <ul>
+                {
+                    folders?.map(el=>{
+                        return <li>{el.name}</li>
+                    })
+                }
+                </ul>
+            </div>
         </div>
     )
 }

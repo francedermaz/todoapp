@@ -27,11 +27,11 @@ router.get('/:id',async(req,res)=>{
 })
 
 //Get items of a folder
-router.get('/folder/:id',async(req,res)=>{
+router.post('/folder/',async(req,res)=>{
     try{
-        const {userId} = req.body;
+        const {userId,folderId} = req.body;
         const items = await Item.findAll({
-            where: {userId: userId, folderId: req.params.id}
+            where: {userId: userId, folderId: folderId}
         });
         res.status(200).send(items);
     }
