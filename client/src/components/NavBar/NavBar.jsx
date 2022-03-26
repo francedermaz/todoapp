@@ -35,11 +35,17 @@ const NavBar = ({is}) => {
                         }
                     </Link>
                     <div className={styles.divlogin}>
-                    <Link to={'/login'}>
+                    {
+                        aux.id?<Link to={'/account'}>
+                        {
+                            <FontAwesomeIcon className={styles.user} icon={faUser} />
+                        }
+                        </Link>:<Link to={'/login'}>
                     {
                         <FontAwesomeIcon className={styles.user} icon={faUser} />
                     }
                     </Link>
+                    }
                     </div>
                 </div>
             </section>

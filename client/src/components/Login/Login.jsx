@@ -122,11 +122,6 @@ const Login = () => {
                 Register
               </Link>
             </div>
-            <div>
-              <Link className={styles.nav_link} to="/resetpassword">
-                Reset Password
-              </Link>
-            </div>
           </div>
           {errorIncorrect.password === true ? (
             <p className={styles.errors}>Password Incorrect</p>

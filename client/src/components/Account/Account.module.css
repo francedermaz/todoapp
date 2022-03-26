@@ -1,0 +1,31 @@
+.page{
+    position: absolute;
+    top:50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    max-width: 50%;
+    text-align: center;
+}
+.account{
+    display: flex;
+    background-color: white;
+    height:50vh;
+    width:50vh;
+    justify-content: center;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.button {
+    border: none;
+    background-color: transparent;
+    outline: none;
+    margin-bottom: 5px;
+}
+.button:focus {
+    border: none;
+}
+.button:hover{
+    cursor: pointer;
+    color: #b983ff;
+}
