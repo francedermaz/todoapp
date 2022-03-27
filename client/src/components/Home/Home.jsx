@@ -92,7 +92,8 @@ const Home = () => {
         <div>
             <NavBar/>
             <div className={styles.page}>
-                <h1 className={styles.title}>What's your plan for today?</h1>
+                <div className={styles.div}>
+                <h1 className={styles.title}>What's the plan for today?</h1>
                 <section className={styles.top}>
                     <form onSubmit={e=>handleSubmit(e)}>
                         <input className={styles.input}
@@ -102,30 +103,36 @@ const Home = () => {
                             input.name.trim()!=='' && input.name.trim().length>3?<button className={styles.bttn} type="submit">Create</button>:<button className={styles.bttndis} disabled>Create</button>
                         }
                     </form>
-                    <FontAwesomeIcon onClick={()=>createFolder()} className={styles.user} icon={faFolderPlus} />
                 </section>
                 <ul>
                 {
                     items?.map(el=>{
                         return <li className={styles.li}>
                             <p className={styles.name}>{el.name}</p>
-                            <button onClick={()=>deleteItemfunction(el.id)}>x</button>
-                            <button onClick={()=>editItemfunction(el.id)}>Edit</button>
+                            <div className={styles.divbuttons}>
+                                <button className={styles.buttonsdel} onClick={()=>deleteItemfunction(el.id)}>x</button>
+                                <button className={styles.buttonsed} onClick={()=>editItemfunction(el.id)}>Edit</button>
+                            </div>
                             </li>
                     })
                 }
                 </ul>
-                <ul>
+                <div className={styles.top}>
+                    <h3 className={styles.folder}>Your folders...</h3>
+                    <FontAwesomeIcon onClick={()=>createFolder()} className={styles.foldericon} icon={faFolderPlus} />
+                </div>
+                <ul className={styles.ul}>
                 {
                     folders?.map(el=>{
-                        return <li>
-                            <p onClick={()=>handleFolderClick(el.id)}>{el.name}</p>
-                            <button onClick={()=>deleteFolderfunction(el.id)}>x</button>
+                        return <li className={styles.lifolder}>
+                            <p className={styles.namefolder} onClick={()=>handleFolderClick(el.id)}>{el.name}</p>
+                            <button className={styles.buttonsdel} onClick={()=>deleteFolderfunction(el.id)}>x</button>
                         </li>
                        
                     })
                 }
                 </ul>
+                </div>
             </div>
         </div>
     )

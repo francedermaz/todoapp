@@ -10,6 +10,9 @@
 .title{
     font-size: 1.4em;
     font-family: calibri;
+    color:white;
+    margin-top: 14px;
+    margin-bottom: 0px;
 }
 
 .top{
@@ -17,56 +20,134 @@
     flex-direction: row;
     justify-content: center;
     align-items: center;
-
+    margin-bottom: 0px;
+    margin-top: 0px;
 }
 
 .input{
-    height:22px;
+    height:25px;
     margin-top: 20px;
-    border: 1px solid rgba(255, 12, 32, 0.911);
-    background-color: rgb(255, 247, 247);
-    border-top-left-radius: 4px;
-    border-bottom-left-radius: 4px;
+    border: 1px solid #f4523b;
+    background-color: transparent;
+    border-top-left-radius: 2px;
+    color:white;
+    border-bottom-left-radius: 2px;
     margin-bottom:0px
 }
 
 .input:focus {
     outline: none;
-    background-color: rgb(252, 237, 237);
+    color:black;
+    background-color: rgb(255, 255, 255);
 }
 
-.btt, .bttdis{
-    height:22px;
+.bttn, .bttndis{
+    height:28px;
     border-top-right-radius: 4px;
     border-bottom-right-radius: 4px;
-    border-color: #f3f3f3;
+    border-color: transparent;
     border-width: 1px;
     margin-bottom:0px
 }
 
-.btt{
-    background-color:#ffd7ff;
-}
-
-.bttdis{
-    background-color:#ffecff;
-}
-
-.btt:hover{
-    cursor:pointer;
-    background-color: #ed5bf0;
+.bttn{
+    background-color:rgba(253, 69, 84, 0.911);
     color:white;
+}
+
+.bttndis{
+    background-color:rgba(255, 83, 97, 0.459);
+    color:rgba(255, 255, 255, 0.281);
+}
+
+.bttn:hover{
+    cursor:pointer;
+    background-color: whitesmoke;
+    color:black;
 }
 
 .li{
     display: flex;
     flex-direction: row;
-    height: 1em;
-    justify-content: center;
+    height: 2em;
     align-items: center;
-    margin-bottom: 1.5em;
+    margin-bottom: 0.4em;
+    background-color: rgb(209, 83, 83);
+    border-radius: 4px;
+    width:20em;
+}
+.name{
+    margin-left: 6px;
+    color:white;
+}
+.divbuttons{
+    display: flex;
+}
+.buttonsdel{
+    border-radius: 10px;
+    font-size: 0.7em;
+    border-color: rgb(165, 40, 40);
+    border-width: 1px;
+    color:rgb(128, 15, 15);
+    background-color: rgba(255, 255, 255, 0.945);
+}
+.buttonsed{
+    border: none;
+    background-color: transparent;
+    outline: none;
+    color:whitesmoke;
+    font-size: 0.8em;
+}
+.buttonsdel:hover{
+    cursor: pointer;
+    background-color: rgb(245, 107, 171);
+}
+.buttonsed:hover{
+    cursor: pointer;
+    color: rgb(245, 107, 171);
 }
 
-.name{
-    margin-right: 1em;
+.div{
+    width: 25em;
+    background-color: #151115;
+    border-radius: 5px;
+}
+
+.folder{
+    color:white;
+    margin-right: 0.3em;
+    margin-bottom: 0px;
+    margin-top: 0px;
+}
+.foldericon{
+    color:rgb(216, 68, 68);
+}
+.foldericon:hover{
+    cursor: pointer;
+    color: whitesmoke;
+}
+
+.ul{
+    display: flex;
+    justify-content: center;
+    padding-left: 0;
+}
+.lifolder{
+    display: flex;
+    flex-direction: row;
+    height: 2em;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 0.4em;
+    background-color: rgb(209, 83, 83);
+    border-radius: 4px;
+    width:15em;
+}
+.namefolder{
+    margin-left: 6px;
+    color:white;
+}
+.namefolder:hover{
+    cursor:pointer;
+    color:rgb(245, 107, 171);
 }

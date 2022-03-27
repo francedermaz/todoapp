@@ -44,7 +44,8 @@ const Create = () => {
         <div>
             <NavBar/>
             <div className={styles.page}>
-                <h2>Create a folder</h2>
+                <div className={styles.div}>
+                <h2 className={styles.title}>Create a folder</h2>
                 <section className={styles.top}>
                         <form onSubmit={e=>handleSubmit(e)}>
                             <input className={styles.input}
@@ -55,6 +56,7 @@ const Create = () => {
                             }
                         </form>
                 </section>
+                </div>
             </div>
         </div>
     )

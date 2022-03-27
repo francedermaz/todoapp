@@ -69,6 +69,7 @@ const Folder = () => {
         <div>
             <NavBar/>
             <div className={styles.page}>
+                <div className={styles.div}>
                 <h2 className={styles.title}>Inside your folder</h2>
                 <section className={styles.top}>
                     <form onSubmit={e=>handleSubmit(e)}>
@@ -84,11 +85,14 @@ const Folder = () => {
                     items?.map(el=>{
                         return <li className={styles.li}>
                             <p className={styles.name}>{el.name}</p>
-                            <button onClick={()=>deleteItemfunction(el.id)}>x</button>
-                            <button onClick={()=>editItemfunction(el.id)}>Edit</button>
+                            <div className={styles.divbuttons}>
+                                <button className={styles.buttonsdel} onClick={()=>deleteItemfunction(el.id)}>x</button>
+                                <button className={styles.buttonsed} onClick={()=>editItemfunction(el.id)}>Edit</button>
+                            </div>
                             </li>
                     })
                 }
+                </div>
             </div>
         </div>
     )
