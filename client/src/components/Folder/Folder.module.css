@@ -115,3 +115,8 @@
     cursor: pointer;
     color: rgb(245, 107, 171);
 }
+.error{
+    color:red;
+    font-size: 0.85em;
+    font-style: italic;
+}

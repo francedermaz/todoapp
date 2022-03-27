@@ -54,3 +54,8 @@
     background-color: whitesmoke;
     color:black;
 }
+.error{
+    color:red;
+    font-size: 0.85em;
+    font-style: italic;
+}

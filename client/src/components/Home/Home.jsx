@@ -100,7 +100,7 @@ const Home = () => {
                         value={input.name} type='text' name='name' placeholder="Add a todo" onChange={e=>handleChange(e)}>
                         </input>
                         {
-                            input.name.trim()!=='' && input.name.trim().length>3?<button className={styles.bttn} type="submit">Create</button>:<button className={styles.bttndis} disabled>Create</button>
+                            input.name.trim()!=='' && input.name.trim().length>3 && input.name.length<30?<button className={styles.bttn} type="submit">Create</button>:<button className={styles.bttndis} disabled>Create</button>
                         }
                     </form>
                 </section>
@@ -135,6 +135,9 @@ const Home = () => {
                 }
                 </ul>
                 </div>
+                {
+                    input.name.length>30?<p className={styles.error}>Todoit's character limit is 30</p>:<></>
+                }
             </div>
         </div>
     )

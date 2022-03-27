@@ -52,11 +52,14 @@ const Create = () => {
                             value={input.name} type='text' name='name' placeholder="Name of your new folder" onChange={e=>handleChange(e)}>
                             </input>
                             {
-                                input.name.trim()!=='' && input.name.trim().length>3?<button className={styles.bttn} type="submit">Create</button>:<button className={styles.bttndis} disabled>Create</button>
+                                input.name.trim()!=='' && input.name.trim().length>3 && input.name.length<20?<button className={styles.bttn} type="submit">Create</button>:<button className={styles.bttndis} disabled>Create</button>
                             }
                         </form>
                 </section>
                 </div>
+                {
+                    input.name.length>20?<p className={styles.error}>Folder's name cannot have more than 20 characters</p>:<></>
+                }
             </div>
         </div>
     )
