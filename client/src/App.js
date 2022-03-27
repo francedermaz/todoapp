@@ -9,6 +9,7 @@ import Folder from './components/Folder/Folder';
 import Edit from './components/Edit/Edit';
 import Create from './components/Create/Create';
 import Account from './components/Account/Account';
+import Page404 from './components/Page404/Page404';
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
         <Route path="/edit/item/:id" element={<Edit/>} />
         <Route path="/folder/create/" element={<Create/>} />
         <Route path="/account" element={<Account/>} />
+        <Route path="*" element={<Page404 />} />
       </Routes>
     </div>
   );
