@@ -108,7 +108,9 @@ const Home = () => {
                 {
                     items?.map(el=>{
                         return <li className={styles.li}>
-                            <p className={styles.name}>{el.name}</p>
+                            <div className={styles.divname}>
+                                <p className={styles.name}>{el.name}</p>
+                            </div>
                             <div className={styles.divbuttons}>
                                 <button className={styles.buttonsdel} onClick={()=>deleteItemfunction(el.id)}>x</button>
                                 <button className={styles.buttonsed} onClick={()=>editItemfunction(el.id)}>Edit</button>
@@ -126,7 +128,7 @@ const Home = () => {
                     folders?.map(el=>{
                         return <li className={styles.lifolder}>
                             <p className={styles.namefolder} onClick={()=>handleFolderClick(el.id)}>{el.name}</p>
-                            <button className={styles.buttonsdel} onClick={()=>deleteFolderfunction(el.id)}>x</button>
+                            <button className={styles.buttonsdelfolder} onClick={()=>deleteFolderfunction(el.id)}>x</button>
                         </li>
                        
                     })

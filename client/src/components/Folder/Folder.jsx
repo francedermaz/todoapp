@@ -84,7 +84,9 @@ const Folder = () => {
                 {
                     items?.map(el=>{
                         return <li className={styles.li}>
-                            <p className={styles.name}>{el.name}</p>
+                            <div className={styles.divname}>
+                                <p className={styles.name}>{el.name}</p>
+                            </div>
                             <div className={styles.divbuttons}>
                                 <button className={styles.buttonsdel} onClick={()=>deleteItemfunction(el.id)}>x</button>
                                 <button className={styles.buttonsed} onClick={()=>editItemfunction(el.id)}>Edit</button>

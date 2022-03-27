@@ -66,11 +66,13 @@
     color:black;
 }
 
+ul{
+    padding-left: 0;
+}
 .li{
-    display: flex;
-    flex-direction: row;
+    display: inline-block;
+    vertical-align: middle;
     height: 2em;
-    align-items: center;
     margin-bottom: 0.4em;
     background-color: rgb(209, 83, 83);
     border-radius: 4px;
@@ -78,10 +80,15 @@
 }
 .name{
     margin-left: 6px;
+    margin-top: 0.5vh;
     color:white;
 }
+.divname{
+    float:left
+}
 .divbuttons{
-    display: flex;
+    margin-top: 0.5vh;
+    float: right;
 }
 .buttonsdel{
     border-radius: 10px;
@@ -133,21 +140,36 @@
     padding-left: 0;
 }
 .lifolder{
-    display: flex;
-    flex-direction: row;
+    display: inline-block;
+    vertical-align: middle;
     height: 2em;
-    align-items: center;
-    justify-content: center;
     margin-bottom: 0.4em;
     background-color: rgb(209, 83, 83);
     border-radius: 4px;
     width:15em;
 }
 .namefolder{
+    float: left;
     margin-left: 6px;
+    margin-top: 0.7vh;
     color:white;
 }
 .namefolder:hover{
     cursor:pointer;
     color:rgb(245, 107, 171);
+}
+.buttonsdelfolder{
+    margin-top: 1vh;
+    margin-right: 4px;
+    float: right;
+    border-radius: 10px;
+    font-size: 0.7em;
+    border-color: rgb(165, 40, 40);
+    border-width: 1px;
+    color:rgb(128, 15, 15);
+    background-color: rgba(255, 255, 255, 0.945);
+}
+.buttonsdelfolder:hover{
+    cursor: pointer;
+    background-color: rgb(245, 107, 171);
 }
