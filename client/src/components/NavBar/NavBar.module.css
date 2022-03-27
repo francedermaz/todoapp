@@ -55,19 +55,18 @@ a:link, a:visited, a:active {
     align-items: center;
 }
 
-.logo{
-    font-family:calibri;
-    color:#f4523b;
-    font-size: 2.25em;
-    font-weight: 25em;
-    -webkit-text-stroke: 2px black;
-    margin-left: 1.85em;
+.img{
     user-select: none; 
+    width: 100%;
     font-style: italic;
 }
 
-.logo:hover{
+.img:hover{
     cursor: pointer;
     transform: scale(1.05);
-    color:whitesmoke
+}
+
+.link{
+    width: 10%;
+    margin-left: 6vh;
 }

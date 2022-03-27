@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import styles from './NavBar.module.css';
+import logo from './assets/logo.png';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faUser } from "@fortawesome/free-solid-svg-icons";
 
@@ -12,11 +13,13 @@ const NavBar = ({is}) => {
     return(
         <div>
             <section className={styles.navbar}>
+                <div className={styles.link}>
                 <Link to={'/'}>
                     {
-                        <h1 className={styles.logo}>todoit</h1>
+                        <img className={styles.img} src={logo} alt="logo"/>
                     }
                 </Link>
+                </div>
                 <div className={styles.menu}>
                     {
                         aux.id?<Link to={'/home'}>
