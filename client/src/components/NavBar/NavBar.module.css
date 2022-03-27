@@ -69,5 +69,5 @@ a:link, a:visited, a:active {
 .logo:hover{
     cursor: pointer;
     transform: scale(1.05);
-    color:#ff7e7e
+    color:whitesmoke
 }

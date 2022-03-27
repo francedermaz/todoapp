@@ -45,4 +45,8 @@
     width: 15%;
     height: 15%;
     margin-top:0px;
+    -webkit-filter: drop-shadow(0.25px 0.25px 0 #f05b5b)
+    drop-shadow(-0.25px -0.25px 0 #f05b5b);
+    filter: drop-shadow(0.25px 0.25px 0 #f05b5b) 
+    drop-shadow(-0.25px -0.25px 0 #f05b5b);
 }
